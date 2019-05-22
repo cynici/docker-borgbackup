@@ -1,6 +1,8 @@
 #! /bin/sh
 
-set -eux
+set -u
+
+[ -n "${DEBUG:-}" ] && set -x
 
 BORGUSER_UID=${BORGUSER_UID:-0}
 BORGUSER_GID=${BORGUSER_GID:-$BORGUSER_UID}
