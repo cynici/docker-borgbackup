@@ -36,12 +36,6 @@ RUN apk upgrade --no-cache \
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
-VOLUME /mnt/source
-VOLUME /mnt/borg-repository
-VOLUME /root/.config/borg
-VOLUME /root/.ssh
-VOLUME /root/.cache/borg
-
 COPY --from=builder /usr/lib/python3.6/site-packages /usr/lib/python3.6/
 COPY --from=builder /usr/bin/borg /usr/bin/
 COPY --from=builder /usr/bin/borgfs /usr/bin/
